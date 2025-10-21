@@ -1,0 +1,198 @@
+/* ===========================
+   styles.css — Plantilla práctica
+   =========================== */
+
+/* 1) Reset / normalización simple */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 2) Variables (colores, espacios, tipografía) */
+:root{
+  --bg: #f7f8fb;
+  --card: #ffffff;
+  --primary: #2563eb;    /* azul */
+  --primary-600: #1e4fb8;
+  --muted: #6b7280;      /* gris */
+  --radius: 12px;
+  --gap: 1rem;
+  --max-width: 1100px;
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* 3) Base — body, tipografías y contenedor */
+html, body {
+  height: 100%;
+  font-family: var(--font-sans);
+  background: linear-gradient(180deg, var(--bg), #eef2ff);
+  color: #111827;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.45;
+  font-size: 16px;
+  padding: 2rem;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* 4) Cabecera / navbar simple */
+.header {
+  display: flex;
+  gap: var(--gap);
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+.nav {
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--muted);
+  padding: .5rem .75rem;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.nav a:hover {
+  color: var(--primary-600);
+  background: rgba(37,99,235,0.06);
+}
+
+/* 5) Hero / encabezado principal */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 1.25rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.hero .title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: .5rem;
+}
+
+.hero .subtitle {
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+/* 6) Tarjetas (cards) */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: 0 6px 20px rgba(16,24,40,0.06);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(16,24,40,0.09);
+}
+
+.card h3 {
+  font-size: 1.05rem;
+  margin-bottom: .5rem;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+/* 7) Botones */
+.btn {
+  display: inline-block;
+  padding: .6rem 1rem;
+  border-radius: 10px;
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background .15s ease, transform .12s ease;
+}
+
+.btn:hover { background: var(--primary-600); transform: translateY(-2px); }
+
+.btn.secondary {
+  background: transparent;
+  color: var(--primary);
+  border: 1px solid rgba(37,99,235,0.14);
+}
+
+/* 8) Formulario simple */
+.form {
+  background: var(--card);
+  padding: 1rem;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 18px rgba(16,24,40,0.04);
+}
+
+.form label {
+  display:block;
+  margin-bottom: .35rem;
+  font-weight: 600;
+  font-size: .9rem;
+}
+
+.input, .textarea {
+  width:100%;
+  padding:.6rem .75rem;
+  margin-bottom: .75rem;
+  border-radius: 8px;
+  border: 1px solid #e6e9ef;
+  background: #fff;
+  font-size: .95rem;
+}
+
+.textarea { min-height: 120px; resize: vertical; }
+
+/* 9) Footer */
+.footer {
+  margin-top: 2rem;
+  color: var(--muted);
+  text-align: center;
+  font-size: .9rem;
+}
+
+/* 10) Responsive */
+@media (max-width: 920px) {
+  .hero { grid-template-columns: 1fr; }
+  .card-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 560px) {
+  .card-grid { grid-template-columns: 1fr; }
+  .header { flex-direction: column; align-items: flex-start; gap:.5rem; }
+}

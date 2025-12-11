@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Operaciones básicas</title>
 </head>
 <body>
-    <h1>Funcion básica</h1>
+    <h1>Función básica</h1>
 
-    <label for="txtDato">Dato</label>
+    <label for="txtDato">Dato:</label>
     <input type="text" id="txtDato">
-    <button onclick="fnGeo()">llamar la Funcion</button>
+    <button onclick="fnGeo()">Llamar función</button>
 
-    <h1>Suma</h1>
+    <h1>Operaciones</h1>
 
     <label for="txtNum1">Número 1:</label>
     <input type="text" id="txtNum1">
@@ -20,12 +20,16 @@
     <label for="txtNum2">Número 2:</label>
     <input type="text" class="txtNum2">
 
-    <button onclick="fnCalcularalex()">Calcular</button>
+    <br><br>
 
-     <button onclick="fnCalcularalex()">resta</button>
-      <button onclick="fnCalcularalex()">multiplicar</button>
-       <button onclick="fnCalcularalex()">dividir</button>
+    <button onclick="fnSumar()">Sumar</button>
+    <button onclick="fnRestar()">Restar</button>
+    <button onclick="fnMultiplicar()">Multiplicar</button>
+    <button onclick="fnDividir()">Dividir</button>
 
+    <p id="resultado"></p>
+
+    <!-- Conectamos el archivo JS -->
     <script src="./alex.js"></script>
 </body>
 </html>

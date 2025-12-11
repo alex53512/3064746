@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora</title>
+  <link rel="stylesheet" href="calculadora.css">
+</head>
+<body>
+  <div class="calculadora">
+    <input type="text" id="pantalla" placeholder="Escribe texto o números">
+
+    <!-- Pantalla secundaria para mostrar el resultado -->
+    <input type="text" id="resultado" value="El resultado: " readonly>
+
+    <div class="contenedor">
+      <!-- Sección de números -->
+      <div class="numeros">
+        <button class="numero" onclick="agregar('7')">7</button>
+        <button class="numero" onclick="agregar('8')">8</button>
+        <button class="numero" onclick="agregar('9')">9</button>
+
+        <button class="numero" onclick="agregar('4')">4</button>
+        <button class="numero" onclick="agregar('5')">5</button>
+        <button class="numero" onclick="agregar('6')">6</button>
+
+        <button class="numero" onclick="agregar('1')">1</button>
+        <button class="numero" onclick="agregar('2')">2</button>
+        <button class="numero" onclick="agregar('3')">3</button>
+
+        <button class="numero cero" onclick="agregar('0')">0</button>
+        <button class="numero" onclick="agregar('.')">.</button>
+        <button class="limpiar" onclick="limpiar()">C</button>
+      </div>
+
+      <!-- Sección de operaciones -->
+      <div class="operaciones">
+        <button class="operacion" onclick="agregar('+')">+</button>
+        <button class="operacion" onclick="agregar('-')">−</button>
+        <button class="operacion" onclick="agregar('*')">×</button>
+        <button class="operacion" onclick="agregar('/')">÷</button>
+        <button class="igual" onclick="calcular()">=</button>
+
+        <button class="busqueda1" onclick="busqueda1()">Busqueda 1</button>
+        <button class="busqueda2" onclick="busqueda2()">Busqueda 2</button>
+        <button class="busqueda3" onclick="busqueda3()">Busqueda 3</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="calculadora.js"></script>
+</body>
+</html>

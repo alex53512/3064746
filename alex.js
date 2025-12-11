@@ -1,54 +1,44 @@
 function fnGeo() {
-    let datoVariable ="alex";
-    datovariable = document.getElementById("txtDato").value;
-    console.log("Ingrese el dato", datovariable);
+    let datoVariable = document.getElementById("txtDato").value;
+    console.log("El dato ingresado es:", datoVariable);
+    document.getElementById("resultado").textContent = `El dato ingresado es: ${datoVariable}`;
 }
 
-function fnCalcularalex (){
-    let Numero1 = 0;
-    let Numero2 = 0;
-
-    numero1 = document.querySelector("#txtNum1").value;
-    numero2 = document.querySelector(".txtNum2").value;
-
-    let resultadosuma = parseInt(numero1) + parseInt(numero2);
-     console.log("la suma de los datos:", numero1 +  numero2, "es:" ,resultadosuma);
-
-    console.log(`La suma de los datos: ${numero1} + ${numero2} es: ${resultadosuma}`);
-
+function fnSumar() {
+    let numero1 = parseFloat(document.querySelector("#txtNum1").value);
+    let numero2 = parseFloat(document.querySelector(".txtNum2").value);
+    let resultado = numero1 + numero2;
+    console.log(`La suma de ${numero1} + ${numero2} es: ${resultado}`);
+    document.getElementById("resultado").textContent = `Resultado: ${resultado}`;
 }
 
-function fnCalcularalex (){
-  
-    numero1 = document.querySelector("#txtNum1").value;
-    numero2 = document.querySelector(".txtNum2").value;
-
-    let resultadoresta = parseFloat(numero1) - parseFloat(numero2);
-
-
-    console.log(`La resta de los datos: ${numero1} - ${numero2} es: ${resultadoresta}`);
-
+function fnRestar() {
+    let numero1 = parseFloat(document.querySelector("#txtNum1").value);
+    let numero2 = parseFloat(document.querySelector(".txtNum2").value);
+    let resultado = numero1 - numero2;
+    console.log(`La resta de ${numero1} - ${numero2} es: ${resultado}`);
+    document.getElementById("resultado").textContent = `Resultado: ${resultado}`;
 }
 
-function fnCalcularalex (){
-  
-    numero1 = document.querySelector("#txtNum1").value;
-    numero2 = document.querySelector(".txtNum2").value;
-
-    let resultadomultiplicacion = parseFloat(numero1) * parseFloat(numero2);
-
-
-    console.log(`La multiplicacion de los datos: ${numero1} * ${numero2} es: ${resultadomultiplicacion}`);
-
+function fnMultiplicar() {
+    let numero1 = parseFloat(document.querySelector("#txtNum1").value);
+    let numero2 = parseFloat(document.querySelector(".txtNum2").value);
+    let resultado = numero1 * numero2;
+    console.log(`La multiplicación de ${numero1} * ${numero2} es: ${resultado}`);
+    document.getElementById("resultado").textContent = `Resultado: ${resultado}`;
 }
 
-function fnCalcularalex() {
-    let numero1 = document.querySelector("#txtNum1").value;
-    let numero2 = document.querySelector(".txtNum2").value;
+function fnDividir() {
+    let numero1 = parseFloat(document.querySelector("#txtNum1").value);
+    let numero2 = parseFloat(document.querySelector(".txtNum2").value);
 
-    let resultadodividir = parseFloat(numero1) / parseFloat(numero2);
+    if (numero2 === 0) {
+        document.getElementById("resultado").textContent = "Error: No se puede dividir entre cero.";
+        console.error("Error: División por cero");
+        return;
+    }
 
-    console.log(`La división de los datos: ${numero1} / ${numero2} es: ${resultadodividir}`);
+    let resultado = numero1 / numero2;
+    console.log(`La división de ${numero1} / ${numero2} es: ${resultado}`);
+    document.getElementById("resultado").textContent = `Resultado: ${resultado}`;
 }
-
-
